@@ -20,6 +20,10 @@ namespace ariel {
 
         void replaceDad(Node *dad);
 
+        std::vector<Node *>& get_sons();
+
+        std::string &get_pos();
+
         ~Node();
     };
 }

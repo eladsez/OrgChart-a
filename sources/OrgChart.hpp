@@ -29,7 +29,7 @@ namespace ariel {
 
         Iterator begin_reverse_order();
 
-        Iterator end_reverse_order();
+        Iterator reverse_order();
 
         Iterator begin_preorder();
 
@@ -39,16 +39,23 @@ namespace ariel {
 
         OrgChart::Iterator end();
 
+        ~OrgChart();
+
         friend std::ostream &operator<<(std::ostream &out, const OrgChart &org);
 
         class Iterator {
         private:
             IterType type;
-            Node *curr;
+            std::vector<Node *> ordered;
+            size_t curr;
+
+            void init_level_order(Node *root);
 
         public:
 
-            Iterator(IterType type);
+            Iterator(IterType type, Node *root);
+
+            Node *get_curr();
 
             bool operator==(const Iterator &other) const;
 

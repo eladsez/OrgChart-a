@@ -16,6 +16,16 @@ namespace ariel {
         this->dad = dad;
     }
 
-    Node::~Node() {}
+    std::vector<Node *>& Node::get_sons(){
+        return sons;
+    }
+
+    std::string& Node::get_pos() {
+        return position;
+    }
+
+    Node::~Node() {
+
+    }
 
 }

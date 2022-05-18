@@ -85,8 +85,8 @@ TEST_CASE("Methods Correctness") {
         CHECK_EQ(++iter_reverse, organization.end_level_order());
     }
 
-    SUBCASE("pre order"){
-        auto iter_pre=organization.begin_preorder();
+    SUBCASE("pre order") {
+        auto iter_pre = organization.begin_preorder();
         CHECK_EQ(*iter_pre, "1");
         CHECK_NOTHROW(++iter_pre);
         CHECK_EQ(*iter_pre, "2");
